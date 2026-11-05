@@ -1,0 +1,43 @@
+:root {
+  --linen: #F7F1E8;
+  --cream: #EFE3D2;
+  --ring: #F2E5D7;          /* кольцо вывески: точный цвет из макета */
+  --sand: #D9C7AE;
+  --taupe: #8B7963;
+  --taupe-ink: #6B5B47;     /* taupe для текста на светлом: контраст ≥ 4.5 */
+  --taupe-light: #BCAB93;   /* taupe для текста на тёмном */
+  --bark: #4B3B2B;
+  --ink: #2A2219;
+  --olive: #6E6B45;
+  --honey: #B98A4B;
+  --honey-light: #DDB27A;
+  --stone: #CBD0CC;         /* RAL 7035: крепления вывески */
+
+  --sign-gradient: radial-gradient(120% 120% at 30% 25%, #8B7963 0%, #5E4C39 45%, #3E3024 100%);
+  /* тот же градиент для больших секций с текстом: светлая зона приглушена ради контраста */
+  --sign-gradient-deep: radial-gradient(120% 120% at 30% 25%, #66543F 0%, #4F3F2E 45%, #352920 100%);
+
+  --f-display: 'Cormorant', 'Times New Roman', serif;
+  --f-label: 'Tenor Sans', 'Arial', sans-serif;
+  --f-body: 'Commissioner', 'Arial', sans-serif;
+
+  --ease-slow: cubic-bezier(.22, .61, .12, 1);
+  --gutter: clamp(20px, 6vw, 96px);
+  --rail: 0px;
+
+  --fs-h1: clamp(48px, 8.4vw, 148px);
+  --fs-h2: clamp(36px, 5.5vw, 88px);
+  --fs-h3: clamp(24px, 2.6vw, 40px);
+  --fs-lead: clamp(18px, 1.5vw, 22px);
+  --fs-body: clamp(16px, 1.15vw, 17px);
+  --fs-label: clamp(11px, .85vw, 12px);
+  --fs-mg: clamp(16px, 1.25vw, 18px);
+
+  --hdr: 76px;
+}
+@media (min-width: 1024px) {
+  :root { --rail: clamp(88px, 7vw, 128px); }
+}
+@media (max-width: 767px) {
+  :root { --hdr: 60px; }
+}

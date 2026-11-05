@@ -1,0 +1,9 @@
+/* Генерирует tools/fonts.mjs: Cormorant, Tenor Sans, Commissioner из Google Fonts, локальные копии */
+@font-face{font-family:'Cormorant';font-style:normal;font-weight:300;font-display:swap;src:url(../fonts/cormorant-300.woff2) format('woff2')}
+@font-face{font-family:'Cormorant';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/cormorant-400.woff2) format('woff2')}
+@font-face{font-family:'Cormorant';font-style:italic;font-weight:300;font-display:swap;src:url(../fonts/cormorant-300i.woff2) format('woff2')}
+@font-face{font-family:'Cormorant';font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/cormorant-400i.woff2) format('woff2')}
+@font-face{font-family:'Tenor Sans';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/tenor-400.woff2) format('woff2')}
+@font-face{font-family:'Commissioner';font-style:normal;font-weight:300;font-display:swap;src:url(../fonts/commissioner-300.woff2) format('woff2')}
+@font-face{font-family:'Commissioner';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/commissioner-400.woff2) format('woff2')}
+@font-face{font-family:'Commissioner';font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/commissioner-500.woff2) format('woff2')}

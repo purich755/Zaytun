@@ -1,0 +1,100 @@
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; background: var(--linen); }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+
+body {
+  margin: 0;
+  background: var(--linen);
+  color: var(--ink);
+  font: 300 var(--fs-body)/1.65 var(--f-body);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+main > section, main > .pin-spacer > section { overflow-x: clip; }
+
+h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+img, svg, picture { display: block; }
+img { max-width: 100%; height: auto; }
+picture { width: 100%; height: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-transform: inherit; letter-spacing: inherit; }
+a { color: inherit; text-decoration: none; }
+small { font-size: .8em; }
+
+h1, h2 { font-family: var(--f-display); font-weight: 300; letter-spacing: -.012em; }
+h2 { font-size: var(--fs-h2); line-height: 1; text-wrap: balance; }
+h3 { font-family: var(--f-display); font-weight: 400; font-size: var(--fs-h3); line-height: 1.08; }
+em { font-style: italic; }
+
+.lead { font-size: var(--fs-lead); line-height: 1.55; }
+.lab { display: inline-block; font: 400 var(--fs-label)/1.4 var(--f-label); text-transform: uppercase; letter-spacing: .2em; }
+.mg { font: italic 400 var(--fs-mg)/1.25 var(--f-display); color: var(--taupe-ink); }
+.foot { font-size: 13px; line-height: 1.45; color: var(--taupe-ink); margin-top: 18px; max-width: 42ch; }
+.circle { border-radius: 50%; overflow: hidden; aspect-ratio: 1; }
+.circle img { width: 100%; height: 100%; object-fit: cover; }
+
+.wrap { padding-left: max(var(--gutter), var(--rail)); padding-right: var(--gutter); }
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.skip { position: fixed; top: 8px; left: 8px; z-index: 200; padding: 10px 16px; background: var(--bark); color: var(--cream); transform: translateY(-160%); border-radius: 99px; }
+.skip:focus { transform: none; }
+
+:focus-visible { outline: 2px solid var(--olive); outline-offset: 3px; }
+[data-dark] :focus-visible, .mob-menu :focus-visible, .lb :focus-visible { outline-color: var(--sand); }
+
+/* Кнопка основная */
+.btn {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  min-height: 50px; padding: 0 30px; border-radius: 99px; overflow: hidden; isolation: isolate;
+  background: var(--bark); color: var(--cream);
+  font: 400 12px/1.2 var(--f-label); text-transform: uppercase; letter-spacing: .16em; text-align: center;
+  --mx: 50%; --my: 50%;
+}
+.btn::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; background: var(--olive);
+  clip-path: circle(0 at var(--mx) var(--my)); transition: clip-path .8s var(--ease-slow);
+}
+.btn span { display: block; transition: transform .6s var(--ease-slow); }
+@media (hover: hover) {
+  .btn:hover::before { clip-path: circle(150% at var(--mx) var(--my)); }
+  .btn:hover { color: var(--linen); }
+  .btn:hover span { transform: translateX(2px); }
+}
+.btn-sm { min-height: 42px; padding: 0 22px; font-size: 11px; }
+.btn-light { background: var(--cream); color: var(--ink); }
+.btn-light::before { background: var(--sand); }
+@media (hover: hover) { .btn-light:hover { color: var(--ink); } }
+
+/* Кнопка тихая */
+.q-link {
+  position: relative; display: inline-block; padding-block: 4px;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size .7s var(--ease-slow);
+}
+@media (hover: hover) { .q-link:hover { background-size: 100% 1px; } }
+.q-link:focus-visible { background-size: 100% 1px; }
+
+.msgr { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+
+/* Меню с точечными лидерами */
+.menu .row { padding: 12px 0; position: relative; transition: background-color .6s var(--ease-slow); }
+.row-main { display: flex; align-items: baseline; gap: 10px; }
+.row-name { font: 400 clamp(21px, 1.9vw, 28px)/1.15 var(--f-display); }
+.dots { flex: 1; min-width: 20px; border-bottom: 1px dotted var(--taupe); transform: translateY(-4px); }
+.row-price { font: 400 clamp(19px, 1.7vw, 25px)/1.15 var(--f-display); font-feature-settings: 'lnum' 1, 'tnum' 1; white-space: nowrap; }
+.row-note { display: block; max-width: 44ch; margin-top: 3px; font-size: 14px; line-height: 1.45; color: var(--taupe-ink); }
+.row-leaf { position: absolute; right: -22px; top: 15px; width: 10px; height: 20px; fill: var(--olive); opacity: 0; transform: rotate(-20deg) scale(.5); transition: opacity .7s, transform .9s var(--ease-slow); }
+@media (hover: hover) and (min-width: 768px) {
+  .menu .row:hover { background: var(--cream); box-shadow: -12px 0 0 var(--cream), 12px 0 0 var(--cream); }
+  .menu .row:hover .row-leaf { opacity: 1; transform: rotate(0) scale(1); }
+}
+
+/* Проявление, а не выезд */
+[data-js] [data-reveal] { opacity: 0; transition: opacity 1.6s var(--ease-slow); transition-delay: var(--rd, 0s); }
+[data-js] [data-reveal].is-in { opacity: 1; }
+[data-reduce] [data-reveal] { transition-duration: .4s; }

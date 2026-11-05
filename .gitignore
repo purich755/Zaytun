@@ -1,0 +1,8 @@
+node_modules/
+.claude/
+img/raw/
+tools/.cache/
+tools/shots/
+README.md
+# Согласование содержит ФИО и ИНН получателя: в публичный репозиторий не кладём
+brand/*.pdf
